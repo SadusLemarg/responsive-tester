@@ -1,0 +1,70 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Responsive Layout Test</title>
+<link href="resources/reset.css" rel="stylesheet" type="text/css">
+<link href="resources/master.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="master">
+    <header>
+    	<div class="centralizing">
+        	<h1>Responsive Layout Test</h1>
+        </div>
+    </header>
+    <main>
+        <div id="settings">
+        	<div class="centralizing">
+            	<ul>
+                    <li>
+                        <input type="file" id="file" onChange="changeFake()">
+                        <input type="text" id="fake" placeholder="../index.html" onKeyUp="updateFake(this.value)">
+                        <label for="file">Buscar</label>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <input type="radio" id="portrait" name="orientation" onChange="changeOrientation()" checked>
+                                <label for="portrait"></label>
+                                <p>Portrait</p>
+                            </li>
+                            <li>
+                                <input type="radio" id="landscape" name="orientation" onChange="changeOrientation()">
+                                <label for="landscape"></label>
+                                <p>Landscape</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="time">
+                            <div id="prev" class="arrow" onClick="subtract()"></div>
+                            <input type="text" id="second" placeholder="0" onKeyUp="validate(this.value)">
+                            <div id="next" class="arrow" onClick="add()"></div>
+                        </div>
+                        <p>Seconds</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <ul id="container">
+                <li>
+                    <h2>320 x 480 (iPhone)</h2>
+                    <iframe src="../index.html" width="320" height="480"></iframe>
+                </li>
+                <li>
+                    <h2>480 x 640 (small tablet)</h2>
+                    <iframe src="../index.html" width="480" height="640"></iframe>
+                </li>
+                <li>
+                    <h2>768 x 1024 (iPad)</h2>
+                    <iframe src="../index.html" width="768" height="1024"></iframe>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+<script src="resources/responsive.js"></script>
+</body>
+</html>
